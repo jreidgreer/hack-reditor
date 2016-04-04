@@ -1,0 +1,25 @@
+{
+  "name": "HackReditor",
+  "authors": [
+    "Reid <jreid.greer@gmail.com>"
+  ],
+  "description": "Text editor for MVP project.",
+  "main": "",
+  "moduleType": [],
+  "license": "All rights reserved.",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "hackreditor",
+  "version": "1.0.0",
+  "description": "Text editor for MVP Project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server/server.js"
+  },
+  "author": "James Reid Greer",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.11"
+  }
+}
