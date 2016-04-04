@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Hack Reditor - Text editing for cool people.</title>
-
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-  </head>
-  <body>
-
-  <nav class="navbar navbar-custom">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Hack Reditor
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container-fluid">
+<div ng-include="'app/partials/nav.html'"></div>
+<div class="container-fluid">
   <div class="row-fluid">
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
@@ -49,14 +27,4 @@
 
   <div class="col-lg-4"></div>
   </div>
-  </div>
-
-    <footer class="footer text-center">
-      <div class="container-fluid">
-        <p class="text-muted">Made with <span class="glyphicon glyphicon-heart"></span> by Reid Greer.</p>
-      </div>
-    </footer>
-    <script src="https://use.typekit.net/rbs5jjm.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  </body>
-</html>
+</div>

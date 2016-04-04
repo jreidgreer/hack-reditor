@@ -120,6 +120,11 @@ h2 {
   margin-bottom: 20px;
 }
 
+.thumbnail .glyphicon{
+  font-size: 6em;
+  margin: auto;
+}
+
 .essay {
   width: 100%;
   background: #FFFFFF;

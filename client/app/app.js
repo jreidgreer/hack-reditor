@@ -1,25 +1,28 @@
 angular.module('hack-reditor', ['ngRoute',
-  'hack-reditor.dashboard'
+  'hack-reditor.dashboard',
+  'hack-reditor.homepage',
+  'hack-reditor.login',
+  'hack-reditor.signup'
   ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/homepage/homepage.html',
+      controller: 'HomepageController'
+    })
     .when('/dashboard', {
       templateUrl: 'app/dashboard/dashboard.html',
       controller: 'DashboardController'
     })
-    .when('/', {
-      templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
-    })
-    .when('/signin', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+    .when('/login', {
+      templateUrl: 'app/login/login.html',
+      controller: 'LoginController'
     })
     .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+      templateUrl: 'app/signup/signup.html',
+      controller: 'SignupController'
     })
     .otherwise({
-      redirectTo: '/links'
+      redirectTo: '/dashboard'
     });
   });
