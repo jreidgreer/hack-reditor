@@ -10,6 +10,6 @@ module.exports = function (app, express) {
 
   // Data routes
   app.post('/api/users/document/', documentController.documentsByUser);
-  app.get('/api/document/', documentController.getDocument);
-  app.post('/api/document/', documentController.saveDocument);
+  app.post('/api/document/', documentController.getDocument);
+  app.post('/api/document/save', documentController.saveDocument);
 };

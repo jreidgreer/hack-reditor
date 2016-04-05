@@ -16,8 +16,8 @@ angular.module('hack-reditor.create', ['textAngular'])
   $scope.save = function() {
     Documents.saveDocument({
       title: $scope.document.title,
-      desc: $scope.document.title,
-      text: $scope.document.title,
+      desc: $scope.document.desc,
+      text: $scope.document.text,
       author: $window.localStorage.getItem('com.hack-reditor-user-id')
     }, function() {
       $location.path('/dashboard');

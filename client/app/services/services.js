@@ -14,7 +14,7 @@ angular.module('hack-reditor.services', [])
   var saveDocument = function(newDocument, callback) {
     return $http({
         method: 'POST',
-        url: '/api/document',
+        url: '/api/document/save',
         data: newDocument
         })
         .then(function (resp) {
@@ -24,7 +24,7 @@ angular.module('hack-reditor.services', [])
 
   var getDocumentById = function(id, callback) {
     return $http({
-        method: 'GET',
+        method: 'POST',
         url: '/api/document',
         data: {id: id}
         })

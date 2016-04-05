@@ -4,7 +4,6 @@ ObjectId = mongoose.Schema.ObjectId;
 
 module.exports = {
   documentsByUser: function (req, res, next) {
-    console.log('Server is receiving the following as the user: ', req.body.user);
     var user = req.body.user;
 
     Document.find({'author': user}, function(err, documents) {
@@ -20,13 +19,12 @@ module.exports = {
   getDocument: function (req, res, next) {
     var id = req.body.id;
 
-    Document.findById(id, function(err, foundDoc) {
+    Document.findById(id).populate('author', 'name').exec(function(err, foundDoc) {
       if ( err ) {
         console.error('An error occured. ', err);
         next();
       } else {
         res.send(foundDoc);
-        next();
       }
     });
   },
@@ -37,9 +35,14 @@ module.exports = {
       desc: req.body.desc,
       text: req.body.text,
       author: req.body.author
-    });
-
-    res.sendStatus(200);
+    }, function(err, createResponse) {
+        if( err ) {
+          console.log('An error occured during creation: ', err);
+          res.sendStatus(500);
+        } else {
+          res.sendStatus(200);
+        }
+      });
   },
   updateDocument: function(req, res, next) {
 

@@ -46,9 +46,6 @@ module.exports = {
   },
   getInfo: function(req, res, next) {
     var email = req.body.email;
-
-    console.log('Is the server receiving proper email? ', email);
-
     User.findOne({email: email}, function(err, user) {
       if( !user ) {
         next(console.error('User Does Not Exist', err));

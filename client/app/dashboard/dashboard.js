@@ -1,5 +1,5 @@
 angular.module('hack-reditor.dashboard', [])
-.controller('DashboardController', function($scope, Documents, Auth, $window){
+.controller('DashboardController', function($scope, Documents, $window, $location){
   $scope.documents = [];
 
   var initialize = function() {
@@ -7,6 +7,10 @@ angular.module('hack-reditor.dashboard', [])
       $scope.documents = retrievedDocs;
     });
   }
+
+  $scope.view = function(id) {
+    $location.path('/view/' + id);
+  };
 
   initialize();
  });

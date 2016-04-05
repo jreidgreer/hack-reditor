@@ -158,3 +158,8 @@ h2 {
   font-size: 2em;
   height: inherit;
 }
+
+.document-view-text {
+  background: #FFFFFF;
+  padding: 10px;
+}
