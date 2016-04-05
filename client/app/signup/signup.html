@@ -4,23 +4,41 @@
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
   <h1>Sign Up</h1>
+  <form name="signupForm" ng-submit="signupForm.$valid && signup()" novalidate>
   <div class="login-box">
+  <div ng-show="signupForm.$submitted || signupForm.signupEmail.$touched || signupForm.signupPassword.$touched">
+  <div class="alert alert-danger" ng-show="signupForm.signupEmail.$error.required || signupForm.signupEmail.$error.email || signupForm.signupPassword.$error.required">
+    <div ng-show="signupForm.signupEmail.$error.required">
+    <strong>Oops!</strong> Email is required.
+    </div>
+    <div ng-show="signupForm.signupEmail.$error.email">
+    <strong>Oops!</strong> This is not a valid email.
+    </div>
+    <div ng-show="signupForm.signupName.$error.required">
+    <strong>Oops!</strong> Name is required.
+    </div>
+    <div ng-show="signupForm.signupPassword.$error.required">
+    <strong>Oops!</strong> Password is required.
+    </div>
+  </div>
+  </div>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="user.email">
+      <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="user.email" name="signupEmail" required>
     </div>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-user"></span></span>
-      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon2" ng-model="user.name">
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon2" ng-model="user.name" name="signupName" required>
     </div>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon3">*</span>
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3" ng-model="user.password">
+      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3" ng-model="user.password" name="signupPassword" required>
     </div>
 
-    <button type="submit" class="btn btn-success pull-right" ng-click="signup()">Submit</button>
+    <button type="submit" class="btn btn-success pull-right">Submit</button>
+    </form>
     <p>Already a user? <a href="/#/login">Sign in.</a></p>
   </div>
 </div>
