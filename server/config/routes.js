@@ -13,4 +13,6 @@ module.exports = function (app, express) {
   app.post('/api/document/', documentController.getDocument);
   app.post('/api/document/save', documentController.saveDocument);
   app.post('/api/document/update', documentController.updateDocument);
+  app.post('/api/document/delete', documentController.deleteDocument);
+
 };

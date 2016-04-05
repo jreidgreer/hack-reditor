@@ -33,6 +33,17 @@ angular.module('hack-reditor.services', [])
         });
   }
 
+  var deleteDocument = function(target, callback) {
+    return $http({
+        method: 'POST',
+        url: '/api/document/delete',
+        data: {id: target}
+        })
+        .then(function (resp) {
+          callback(resp.data);
+        });
+  }
+
   var getDocumentById = function(id, callback) {
     return $http({
         method: 'POST',
@@ -48,6 +59,7 @@ angular.module('hack-reditor.services', [])
     getDocumentsByUser: getDocumentsByUser,
     saveDocument: saveDocument,
     updateDocument: updateDocument,
+    deleteDocument: deleteDocument,
     getDocumentById: getDocumentById
   }
 })

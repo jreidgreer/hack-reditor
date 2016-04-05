@@ -163,3 +163,7 @@ h2 {
   background: #FFFFFF;
   padding: 10px;
 }
+
+.delete-button {
+  margin-right: 20px;
+}

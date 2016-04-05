@@ -38,4 +38,10 @@ angular.module('hack-reditor.edit', ['textAngular'])
       $location.path('/dashboard');
     });
   }
+
+  $scope.delete = function() {
+    Documents.deleteDocument($scope.id, function() {
+      $location.path('/dashboard');
+    });
+  }
 });
