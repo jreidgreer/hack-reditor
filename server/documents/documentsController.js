@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var Document = require('./documentController');
-ObjectId = Schema.ObjectId;
+var Document = require('./documentModel.js');
+ObjectId = mongoose.Schema.ObjectId;
 
 module.exports = {
   documentsByUser: function (req, res, next) {
@@ -37,6 +37,8 @@ module.exports = {
       text: req.body.text,
       author: req.body.author
     });
+
+    res.sendStatus(200);
   },
   updateDocument: function(req, res, next) {
 

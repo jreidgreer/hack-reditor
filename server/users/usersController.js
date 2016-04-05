@@ -44,6 +44,25 @@ module.exports = {
       }
     });
   },
+  getInfo: function(req, res, next) {
+    var email = req.body.email;
+
+    console.log('Is the server receiving proper email? ', email);
+
+    User.findOne({email: email}, function(err, user) {
+      if( !user ) {
+        next(console.error('User Does Not Exist', err));
+      } else {
+        var sentInfo = {
+          email: user.email,
+          id: user._id,
+          name: user.name
+        }
+        res.send(sentInfo);
+        next();
+      }
+    });
+  },
   checkAuth: function (req, res, next) {
       var token = req.headers['x-access-token'];
       if (!token) {

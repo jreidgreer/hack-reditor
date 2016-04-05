@@ -144,12 +144,17 @@ h2 {
   font-size: 100%;
 }
 
-.editor-text:focus {
-  background: red;
-  /*box-shadow: 0 1px 10px #222;*/
+.author {
+  margin: 10px 0 10px 0;
 }
 
 .document-controls {
   margin-bottom: 10px;
   overflow: hidden;
+}
+
+.document-title {
+  font-family: "bebas-neue", sans-serif;
+  font-size: 2em;
+  height: inherit;
 }

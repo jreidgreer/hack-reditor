@@ -3,7 +3,9 @@ angular.module('hack-reditor.login', [])
   $scope.login = function () {
       Auth.login($scope.user, function (token) {
           $window.localStorage.setItem('com.hack-reditor', token);
-          $location.path('/dashboard');
+          Auth.getInfo({email: $scope.user.email}, function(userInfo){
+            $location.path('/dashboard');
+          });
         });
     };
 });

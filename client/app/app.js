@@ -57,4 +57,4 @@ angular.module('hack-reditor', ['ngRoute',
       $location.path('/login');
     }
   });
-});
+})

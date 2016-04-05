@@ -15,7 +15,7 @@ var DocumentSchema = new mongoose.Schema({
   },
 
   author:{
-    type: Schema.Types.ObjectId, ref: 'users'
+    type: mongoose.Schema.Types.ObjectId, ref: 'users'
   }
 });
 

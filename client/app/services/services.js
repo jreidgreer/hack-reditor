@@ -3,7 +3,7 @@ angular.module('hack-reditor.services', [])
   var getDocumentsByUser = function(user) {
     return $http({
         method: 'GET',
-        url: '/api/users/documents',
+        url: '/api/users/document',
         data: {user: user}
         })
         .then(function (resp) {
@@ -11,21 +11,21 @@ angular.module('hack-reditor.services', [])
         });
   };
 
-  var saveDocument = function(newDocument) {
+  var saveDocument = function(newDocument, callback) {
     return $http({
         method: 'POST',
-        url: '/api/documents',
+        url: '/api/document',
         data: newDocument
         })
         .then(function (resp) {
-          return resp.data;
+          callback(resp.data);
         });
   }
 
   var getDocumentById = function(id) {
     return $http({
         method: 'GET',
-        url: '/api/documents',
+        url: '/api/document',
         data: {id: id}
         })
         .then(function (resp) {
@@ -41,6 +41,13 @@ angular.module('hack-reditor.services', [])
 })
 
 .factory('Auth', function($http, $location, $window){
+  var currentUser = {
+    id: '',
+    email: '',
+    name: '',
+    isUser: false
+  };
+
   var signup = function(user, callback){
     return $http({
         method: 'POST',
@@ -63,12 +70,35 @@ angular.module('hack-reditor.services', [])
         });
   };
 
+  var getInfo = function(user, callback){
+    return $http({
+        method: 'POST',
+        url: '/api/users/getInfo',
+        data: user
+        })
+        .then(function (resp) {
+          console.log('getInfo service is receiving the following response: ', resp.data);
+          currentUser.id = resp.data.id;
+          currentUser.email = resp.data.email;
+          currentUser.name = resp.data.name;
+          currentUser.isUser = true;
+
+          callback(resp.user);
+        });
+  };
+
   var isAuth = function () {
       return !!$window.localStorage.getItem('com.hack-reditor');
     };
 
   var logout = function (callback) {
     $window.localStorage.removeItem('com.hack-reditor');
+    currentUser = {
+        id: '',
+        email: '',
+        name: '',
+        isUser: false
+      };
     callback();
   };
 
@@ -76,6 +106,8 @@ angular.module('hack-reditor.services', [])
     signup: signup,
     login: login,
     logout: logout,
-    isAuth: isAuth
+    getInfo: getInfo,
+    isAuth: isAuth,
+    currentUser: currentUser
   }
 });
