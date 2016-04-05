@@ -41,18 +41,41 @@ angular.module('hack-reditor.services', [])
 })
 
 .factory('Auth', function($http, $location, $window){
-  var signup = function(user){
+  var signup = function(user, callback){
     return $http({
         method: 'POST',
         url: '/api/users/signup',
         data: user
         })
         .then(function (resp) {
-          return resp.data.token;
+          callback(resp.data.token);
         });
   };
 
+  var login = function(user, callback){
+    return $http({
+        method: 'POST',
+        url: '/api/users/login',
+        data: user
+        })
+        .then(function (resp) {
+          callback(resp.data.token);
+        });
+  };
+
+  var isAuth = function () {
+      return !!$window.localStorage.getItem('com.shortly');
+    };
+
+  var logout = function (callback) {
+    $window.localStorage.removeItem('com.shortly');
+    callback();
+  };
+
   return {
-    signup: signup
+    signup: signup,
+    login: login,
+    logout: logout,
+    isAuth: isAuth
   }
 });

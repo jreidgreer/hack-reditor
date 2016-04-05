@@ -38,6 +38,9 @@ module.exports = {
           name: name,
           password: password
         })
+
+        var token = jwt.encode(user, 'secret');
+        res.json({token: token});
       }
     });
   },

@@ -3,7 +3,8 @@ angular.module('hack-reditor', ['ngRoute',
   'hack-reditor.dashboard',
   'hack-reditor.homepage',
   'hack-reditor.login',
-  'hack-reditor.signup'
+  'hack-reditor.signup',
+  'hack-reditor.nav'
   ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
