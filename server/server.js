@@ -8,7 +8,7 @@ app.use(bodyParser());
 app.use(express.static(__dirname + '/../client'));
 
 // Database connection & routing
-mongoose.connect('mongodb://localhost/hack-reditor');
+mongoose.connect('mongodb://localhost/hackreditor');
 require('./config/routes.js')(app, express);
 
 // Port establishment

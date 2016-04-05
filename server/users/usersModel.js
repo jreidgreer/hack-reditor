@@ -20,3 +20,36 @@ var UserSchema = new mongoose.Schema({
   },
   salt: String
 });
+
+UserSchema.methods.comparePasswords = function(inputPassword, callback) {
+  var actualPassword = this.password
+  bcrypt.compare(inputPassword, actualPassword, function(err, res) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, res);
+    }
+  });
+};
+
+UserSchema.pre('save', function(next){
+  var user = this;
+
+  var password = this.password;
+  bcrypt.genSalt(12, function(err, salt) {
+    if(err) {
+      return next(err);
+    }
+    bcrypt.hash(password, salt , null, function(err, hash) {
+      if(err) {
+        return next(err);
+      }
+
+      user.password = hash;
+      user.salt = salt;
+      next();
+    });
+  });
+});
+
+module.exports = mongoose.model('users', UserSchema);

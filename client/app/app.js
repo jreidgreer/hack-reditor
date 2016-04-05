@@ -1,4 +1,5 @@
 angular.module('hack-reditor', ['ngRoute',
+  'hack-reditor.services',
   'hack-reditor.dashboard',
   'hack-reditor.homepage',
   'hack-reditor.login',

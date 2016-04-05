@@ -7,20 +7,20 @@
   <div class="login-box">
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="user.email">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-user"></span></span>
-      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon2">
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon2" ng-model="user.name">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon3">*</span>
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3">
+      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3" ng-model="user.password">
     </div>
 
-    <button type="submit" class="btn btn-success pull-right">Submit</button>
+    <button type="submit" class="btn btn-success pull-right" ng-click="signup()">Submit</button>
     <p>Already a user? <a href="#">Sign in.</a></p>
   </div>
 </div>
