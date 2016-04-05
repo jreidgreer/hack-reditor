@@ -1,9 +1,10 @@
 angular.module('hack-reditor.create', ['textAngular'])
-.controller('CreateController', function($scope, Documents, $location, Auth){
+.controller('CreateController', function($scope, Documents, $location, $window){
   $scope.document = {
     text: 'Click to write...',
     title: 'Enter Title Here',
-    desc: 'Enter short description'
+    desc: 'Enter short description',
+    author: $window.localStorage.getItem('com.hack-reditor-user-name')
   };
 
   $scope.toolbarSettings = [
@@ -17,7 +18,7 @@ angular.module('hack-reditor.create', ['textAngular'])
       title: $scope.document.title,
       desc: $scope.document.title,
       text: $scope.document.title,
-      author: Auth.currentUser.id
+      author: $window.localStorage.getItem('com.hack-reditor-user-id')
     }, function() {
       $location.path('/dashboard');
     });

@@ -9,7 +9,7 @@ module.exports = function (app, express) {
   app.post('/api/users/getInfo', userController.getInfo);
 
   // Data routes
-  app.post('/api/users/documents', documentController.documentsByUser);
+  app.post('/api/users/document/', documentController.documentsByUser);
   app.get('/api/document/', documentController.getDocument);
   app.post('/api/document/', documentController.saveDocument);
 };

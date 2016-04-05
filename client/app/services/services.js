@@ -1,13 +1,13 @@
 angular.module('hack-reditor.services', [])
 .factory('Documents', function($http){
-  var getDocumentsByUser = function(user) {
+  var getDocumentsByUser = function(user, callback) {
     return $http({
-        method: 'GET',
+        method: 'POST',
         url: '/api/users/document',
         data: {user: user}
         })
         .then(function (resp) {
-          return resp.data;
+          callback(resp.data);
         });
   };
 
@@ -22,14 +22,14 @@ angular.module('hack-reditor.services', [])
         });
   }
 
-  var getDocumentById = function(id) {
+  var getDocumentById = function(id, callback) {
     return $http({
         method: 'GET',
         url: '/api/document',
         data: {id: id}
         })
         .then(function (resp) {
-          return resp.data;
+          callback(resp.data);
         });
   };
 
@@ -77,13 +77,12 @@ angular.module('hack-reditor.services', [])
         data: user
         })
         .then(function (resp) {
-          console.log('getInfo service is receiving the following response: ', resp.data);
           currentUser.id = resp.data.id;
           currentUser.email = resp.data.email;
           currentUser.name = resp.data.name;
           currentUser.isUser = true;
 
-          callback(resp.user);
+          callback(currentUser);
         });
   };
 
@@ -93,6 +92,8 @@ angular.module('hack-reditor.services', [])
 
   var logout = function (callback) {
     $window.localStorage.removeItem('com.hack-reditor');
+    $window.localStorage.removeItem('com.hack-reditor-user-id');
+    $window.localStorage.removeItem('com.hack-reditor-user-name');
     currentUser = {
         id: '',
         email: '',

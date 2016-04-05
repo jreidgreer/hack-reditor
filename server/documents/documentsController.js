@@ -4,6 +4,7 @@ ObjectId = mongoose.Schema.ObjectId;
 
 module.exports = {
   documentsByUser: function (req, res, next) {
+    console.log('Server is receiving the following as the user: ', req.body.user);
     var user = req.body.user;
 
     Document.find({'author': user}, function(err, documents) {
