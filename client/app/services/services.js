@@ -22,6 +22,17 @@ angular.module('hack-reditor.services', [])
         });
   }
 
+  var updateDocument = function(existingDoc, callback) {
+    return $http({
+        method: 'POST',
+        url: '/api/document/update',
+        data: existingDoc
+        })
+        .then(function (resp) {
+          callback(resp.data);
+        });
+  }
+
   var getDocumentById = function(id, callback) {
     return $http({
         method: 'POST',
@@ -36,6 +47,7 @@ angular.module('hack-reditor.services', [])
   return {
     getDocumentsByUser: getDocumentsByUser,
     saveDocument: saveDocument,
+    updateDocument: updateDocument,
     getDocumentById: getDocumentById
   }
 })

@@ -6,6 +6,7 @@ angular.module('hack-reditor', ['ngRoute',
   'hack-reditor.signup',
   'hack-reditor.create',
   'hack-reditor.view',
+  'hack-reditor.edit',
   'hack-reditor.nav'
   ])
 .config(function ($routeProvider, $httpProvider) {
@@ -30,6 +31,11 @@ angular.module('hack-reditor', ['ngRoute',
     .when('/create', {
       templateUrl: 'app/documents/create/create.html',
       controller: 'CreateController',
+      authenticate: true
+    })
+    .when('/edit/:id', {
+      templateUrl: 'app/documents/edit/edit.html',
+      controller: 'EditController',
       authenticate: true
     })
     .when('/view/:id', {

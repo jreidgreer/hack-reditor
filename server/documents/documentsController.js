@@ -44,6 +44,21 @@ module.exports = {
         }
       });
   },
+  deleteDocument: function (req, res, next) {
+    Document.create({
+      title: req.body.title,
+      desc: req.body.desc,
+      text: req.body.text,
+      author: req.body.author
+    }, function(err, createResponse) {
+        if( err ) {
+          console.log('An error occured during creation: ', err);
+          res.sendStatus(500);
+        } else {
+          res.sendStatus(200);
+        }
+      });
+  },
   updateDocument: function(req, res, next) {
 
     Document.findById(req.body.id, function(err, foundDoc) {
@@ -51,7 +66,7 @@ module.exports = {
         next(console.error('Document Does Not Exist', err));
       } else {
         foundDoc.title = req.body.title;
-        foundDoc.desc = req.body.req.body.desc;
+        foundDoc.desc = req.body.desc;
         foundDoc.text = req.body.text;
         foundDoc.author = req.body.author;
 
@@ -59,7 +74,7 @@ module.exports = {
           if (err) {
             next(err);
           } else {
-            res.send(200);
+            res.sendStatus(200);
             next();
           }
         })

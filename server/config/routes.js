@@ -12,4 +12,5 @@ module.exports = function (app, express) {
   app.post('/api/users/document/', documentController.documentsByUser);
   app.post('/api/document/', documentController.getDocument);
   app.post('/api/document/save', documentController.saveDocument);
+  app.post('/api/document/update', documentController.updateDocument);
 };

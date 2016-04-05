@@ -12,5 +12,9 @@ angular.module('hack-reditor.dashboard', [])
     $location.path('/view/' + id);
   };
 
+  $scope.edit = function(id) {
+    $location.path('/edit/' + id);
+  };
+
   initialize();
  });
