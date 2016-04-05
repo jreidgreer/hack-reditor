@@ -7,21 +7,10 @@
   <h1 contentEditable="true">My New Essay <small contentEditable="false">By Reid Greer</small></h1>
   </div>
 
-  <div class="editor"></div>
-  <div class="essay">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar dictum augue sed fringilla. Praesent ultricies, enim at pretium aliquet, leo ante commodo est, quis consectetur urna ex ac sem. Donec vel risus rhoncus, placerat est ut, rhoncus mi. Nam ut efficitur mi, vitae tempus ex. Nullam sagittis viverra nunc, quis faucibus ipsum ornare condimentum. Ut eget pharetra purus. Cras quis turpis et est dapibus auctor. Duis eu quam ac dolor ultrices porttitor. Mauris vestibulum lectus id scelerisque pretium. Sed porttitor lacus ut erat mattis, vitae laoreet odio efficitur.</p>
-
-  <p>Sed a metus sit amet purus consectetur pulvinar at eget ex. Proin elementum blandit sapien quis tempus. Quisque placerat sit amet eros sit amet convallis. Nam ornare nibh vel diam egestas, eu dictum metus feugiat. Aliquam erat volutpat. Suspendisse risus dolor, interdum ut rutrum id, fermentum a mauris. In ac metus finibus purus feugiat venenatis quis in metus.</p>
-
-  <p>Quisque at ultricies metus. Ut iaculis sed felis eget malesuada. Ut non dolor urna. Quisque accumsan lorem metus, id porta eros aliquet ac. Vivamus metus ante, pretium a fermentum vel, condimentum a mauris. In hac habitasse platea dictumst. Curabitur a dignissim purus. Nunc blandit, erat sit amet viverra iaculis, tellus purus consequat turpis, eget hendrerit odio metus sit amet felis. Nullam condimentum quam ut nisi efficitur, vitae vehicula turpis pulvinar. Aenean feugiat turpis urna, condimentum tristique mauris molestie nec. Integer vulputate nunc eu urna maximus ultrices. Nunc ultrices nibh magna, vitae malesuada dolor cursus ac. Donec pretium lorem mauris, et dictum ipsum sagittis vel. Proin tempor luctus libero, eu viverra sem ornare nec.</p>
-
-  <p>Phasellus eu augue eu nibh molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt congue lacus, sed lobortis purus pretium vitae. Sed condimentum sem non condimentum sollicitudin. Aenean mauris turpis, finibus sit amet tempor eu, ullamcorper sed purus. Pellentesque aliquam id felis eu pretium. Etiam blandit, tortor sed lobortis laoreet, nisl ipsum maximus leo, facilisis feugiat eros augue ac diam. Aliquam neque urna, maximus vel facilisis a, egestas vitae nisl. Ut lacinia aliquam cursus.</p>
-
-  <p>Suspendisse sapien arcu, dictum ut congue quis, ultricies quis leo. Phasellus fermentum suscipit risus sit amet vehicula. Nunc semper mauris quis ultrices accumsan. Maecenas tempor erat id enim pellentesque malesuada. In mi leo, pellentesque eget mi vitae, tristique varius risus. Proin nulla felis, rhoncus id aliquet ac, sodales vitae odio. In a tellus sapien. Nulla lobortis venenatis risus mollis maximus. Morbi convallis nisl id quam aliquam vulputate. Curabitur fringilla fermentum pretium. In nec magna a felis malesuada interdum. Nam non lorem sed mi molestie pulvinar sit amet sit amet nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean vel justo et lectus tincidunt maximus sed sed felis.</p>
-
-  <p>Nulla consectetur rhoncus sollicitudin. Sed eleifend pretium quam, eget malesuada augue mollis sit amet. In sed nisl facilisis, efficitur ipsum sit amet, porta lectus. Sed et vehicula erat, a tristique quam. Donec scelerisque purus elit, consequat dictum velit pretium et. Morbi nec placerat est. Phasellus ligula ligula, ornare vel varius id, egestas porta lorem. Curabitur bibendum id enim vel dapibus. Sed fringilla sagittis dui non varius. Morbi fermentum massa nec pellentesque consequat. In at tincidunt sapien.</p>
-
-  <p>Proin tellus mauris, rhoncus et nunc vel, pellentesque ornare nunc. Proin mollis, nisl non semper gravida, leo mi egestas dolor, vel hendrerit augue mauris eu erat. Curabitur viverra molestie turpis id hendrerit. Donec egestas ligula in rhoncus pulvinar. Aliquam erat volutpat. Mauris facilisis dolor volutpat imperdiet finibus. Ut id dolor sed purus tincidunt vehicula. Mauris vulputate mollis leo, eu auctor nibh bibendum ut. Proin rutrum tincidunt felis et varius. Donec purus dolor, tristique at purus et, vehicula blandit nisl. In laoreet facilisis nulla sed iaculis. Cras in orci quis urna hendrerit tristique.</p>
+  <div class="document-controls">
+    <button class="btn btn-success pull-right"  ng-click="save()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+  </div>
+  <div text-angular ng-model="document.text" ta-text-editor-class="editor-text" ta-toolbar="{{toolbarSettings}}">
   </div>
 </div>
 

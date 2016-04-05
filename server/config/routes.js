@@ -8,7 +8,7 @@ module.exports = function (app, express) {
   app.get('/api/users/signedin', userController.checkAuth);
 
   // Data routes
-  // app.post('/api/users/documents', documentController.documentsByUser);
-  // app.get('/api/document/', documentController.getDocument);
-  // app.post('/api/document/', documentController.saveDocument);
+  app.post('/api/users/documents', documentController.documentsByUser);
+  app.get('/api/document/', documentController.getDocument);
+  app.post('/api/document/', documentController.saveDocument);
 };

@@ -29,7 +29,8 @@ angular.module('hack-reditor', ['ngRoute',
     })
     .when('/create', {
       templateUrl: 'app/create/create.html',
-      controller: 'CreateController'
+      controller: 'CreateController',
+      authenticate: true
     })
     .otherwise({
       redirectTo: '/dashboard'
