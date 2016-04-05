@@ -39,11 +39,24 @@ module.exports = {
           password: password
         })
 
-        var token = jwt.encode(user, 'secret');
+        var token = jwt.encode(user, 'super secret stuff');
         res.json({token: token});
       }
     });
   },
-
-
+  checkAuth: function (req, res, next) {
+      var token = req.headers['x-access-token'];
+      if (!token) {
+        next(new Error('No token'));
+      } else {
+        var user = jwt.decode(token, 'secret');
+        User.findOne({email: email}, function(err, foundUser) {
+            if (foundUser) {
+              res.send(200);
+            } else {
+              res.send(401);
+            }
+          })
+      }
+    }
 };

@@ -64,11 +64,11 @@ angular.module('hack-reditor.services', [])
   };
 
   var isAuth = function () {
-      return !!$window.localStorage.getItem('com.shortly');
+      return !!$window.localStorage.getItem('com.hack-reditor');
     };
 
   var logout = function (callback) {
-    $window.localStorage.removeItem('com.shortly');
+    $window.localStorage.removeItem('com.hack-reditor');
     callback();
   };
 
