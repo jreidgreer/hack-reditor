@@ -4,6 +4,8 @@ angular.module('hack-reditor', ['ngRoute',
   'hack-reditor.homepage',
   'hack-reditor.login',
   'hack-reditor.signup',
+  'hack-reditor.create',
+  'hack-reditor.view',
   'hack-reditor.nav'
   ])
 .config(function ($routeProvider, $httpProvider) {
@@ -24,6 +26,10 @@ angular.module('hack-reditor', ['ngRoute',
     .when('/signup', {
       templateUrl: 'app/signup/signup.html',
       controller: 'SignupController'
+    })
+    .when('/create', {
+      templateUrl: 'app/create/create.html',
+      controller: 'CreateController'
     })
     .otherwise({
       redirectTo: '/dashboard'

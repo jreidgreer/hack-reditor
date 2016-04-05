@@ -4,5 +4,9 @@ angular.module('hack-reditor.nav', [])
     Auth.logout(function(){
       $location.path('/login');
     });
-  }
+  };
+
+  $scope.create = function() {
+    $location.path('/create');
+  };
 })
