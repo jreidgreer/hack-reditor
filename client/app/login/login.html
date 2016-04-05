@@ -4,18 +4,32 @@
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
   <h1>Login</h1>
+  <form name="loginForm" ng-submit="loginForm.$valid && login()" novalidate>
   <div class="login-box">
+      <div ng-show="loginForm.$submitted || loginForm.loginEmail.$touched || loginForm.loginPassword.$touched">
+      <div class="alert alert-danger" ng-show="loginForm.loginEmail.$error.required || loginForm.loginEmail.$error.email || loginForm.loginPassword.$error.required">
+        <div ng-show="loginForm.loginEmail.$error.required">
+        <strong>Oops!</strong> Email is required.
+        </div>
+        <div ng-show="loginForm.loginEmail.$error.email">
+        <strong>Oops!</strong> This is not a valid email.
+        </div>
+        <div ng-show="loginForm.loginPassword.$error.required">
+        <strong>Oops!</strong> Password is required.
+        </div>
+      </div>
+      </div>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="user.email">
-    </div>
+      <input type="email" name="loginEmail" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="user.email" required>
 
+    </div>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon3">*</span>
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3" ng-model="user.password">
+      <input name="loginPassword" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon3" ng-model="user.password" required>
     </div>
 
-    <button type="submit" class="btn btn-success pull-right" ng-click="login()">Submit</button>
+    <button type="submit" class="btn btn-success pull-right">Submit</button>
     <p>Not a user? <a href="/#/signup">Sign up.</a></p>
   </div>
 </div>

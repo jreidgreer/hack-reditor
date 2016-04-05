@@ -126,6 +126,11 @@ h2 {
   margin: auto;
 }
 
+.dashboard-title {
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
 .ta-toolbar {
   padding: 10px;
   border-radius: 6px;
