@@ -28,12 +28,12 @@ angular.module('hack-reditor', ['ngRoute',
       controller: 'SignupController'
     })
     .when('/create', {
-      templateUrl: 'app/create/create.html',
+      templateUrl: 'app/documents/create/create.html',
       controller: 'CreateController',
       authenticate: true
     })
     .when('/view/:id', {
-      templateUrl: 'app/view/view.html',
+      templateUrl: 'app/documents/view/view.html',
       controller: 'ViewController'
     })
     .otherwise({
