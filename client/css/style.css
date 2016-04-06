@@ -68,6 +68,10 @@ h2 {
   border: 1px solid #ff4317;
 }
 
+.col-lg-4 .btn-signup {
+  margin-top: 40px;
+}
+
 .icon-container {
   text-align: center;
 }
