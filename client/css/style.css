@@ -132,6 +132,10 @@ h2 {
   margin-top: 50px;
 }
 
+.dashboard-header, .dashboard-header h3 {
+  margin-top: 0px;
+}
+
 .dashboard-title {
   width: 100%;
   text-overflow: ellipsis;
