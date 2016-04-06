@@ -122,14 +122,29 @@ h2 {
 }
 
 .thumbnail .glyphicon-file{
+  margin-top: 5px;
   font-size: 6em;
   width: 100%;
   text-align: center;
 }
 
+.dashboard-helper {
+  margin-top: 50px;
+}
+
 .dashboard-title {
   width: 100%;
   text-overflow: ellipsis;
+}
+
+.view-header {
+  background: #FFFFFF;
+  margin-bottom: 0;
+  padding: 10px 10px 0 10px;
+}
+
+.view-header h1{
+  font-size: 3.5em;
 }
 
 .ta-toolbar {

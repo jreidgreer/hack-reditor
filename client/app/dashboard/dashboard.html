@@ -1,5 +1,8 @@
 <div ng-include="'app/partials/nav.html'"></div> 
 <div class="container">
+<div ng-hide="hasDocuments">
+<h3 class="text-center dashboard-helper">Hey there! It appears you don't have any documents. Why not <a href="/#/create">write one</a>?</h3>
+</div>
 <div ng-repeat="document in documents">
 <div class="col-sm-6 col-md-4 col-lg-3">
   <div class="thumbnail">

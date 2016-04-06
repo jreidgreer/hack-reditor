@@ -5,6 +5,7 @@ angular.module('hack-reditor.dashboard', [])
   var initialize = function() {
     Documents.getDocumentsByUser($window.localStorage.getItem('com.hack-reditor-user-id'), function(retrievedDocs){
       $scope.documents = retrievedDocs;
+      $scope.hasDocuments = !($scope.documents.length === 0);
     });
   }
 
