@@ -26,29 +26,22 @@ A simple text editor and document management system built on the MEAN stack with
 
 ##Screenshots
 ###Homepage
-
-![Homepage](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/homepage.png =500x313 "Homepage")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/homepage.png" width="500" height="313">
 
 ###Secured Signup w/ Client Validation
-
-![Secured Signup](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/signup-validation.png =500x313 "Secured Signup")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/signup-validation.png" width="500" height="313">
 
 ###Empty Dashboard (Shows Prompt)
-
-![Empty Dashboard](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/dashboard-blank.png =500x313 "Empty Dashboard")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/dashboard-blank.png" width="500" height="313">
 
 ###Document Create Page
-
-![Document Create Page](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-create.png =500x313 "Document Create Page")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-create.png" width="500" height="313">
 
 ###Dashboard w/ Updated Content
-
-![Dashboard](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/dashboard.png =500x313 "Dashboard w/ Updated Content")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/dashboard.png" width="500" height="313">
 
 ###Document View Page (Unauthenticated for Sharing)
-
-![Document View Page](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-view.png =500x313 "Document View Page")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-view.png" width="500" height="313">
 
 ###Document Edit Page
-
-![Document Edit Page](https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-edit.png =500x313 "Document Edit Page")
+<img src="https://raw.githubusercontent.com/jreidgreer/hack-reditor/screenshots/screenshots/document-edit.png" width="500" height="313">
