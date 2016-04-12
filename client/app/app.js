@@ -21,11 +21,11 @@ angular.module('hack-reditor', ['ngRoute',
       authenticate: true
     })
     .when('/login', {
-      templateUrl: 'app/login/login.html',
+      templateUrl: 'app/auth/login/login.html',
       controller: 'LoginController'
     })
     .when('/signup', {
-      templateUrl: 'app/signup/signup.html',
+      templateUrl: 'app/auth/signup/signup.html',
       controller: 'SignupController'
     })
     .when('/create', {
